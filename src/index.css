@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    color-scheme: dark;
+  }
+  body {
+    background:
+      radial-gradient(1200px 600px at 10% -10%, rgba(16, 185, 129, 0.06), transparent 60%),
+      radial-gradient(900px 500px at 110% 10%, rgba(34, 211, 238, 0.05), transparent 60%),
+      #09090b;
+    min-height: 100vh;
+  }
+  ::selection {
+    background: rgba(16, 185, 129, 0.3);
+  }
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
+    opacity: 0.4;
+  }
+}
+
+@layer components {
+  .field {
+    @apply w-full rounded-lg border border-zinc-800 bg-zinc-950/60 px-3 py-2 text-sm text-zinc-100 placeholder:text-zinc-600
+      outline-none transition focus:border-emerald-500/60 focus:ring-2 focus:ring-emerald-500/15;
+  }
+  .label {
+    @apply mb-1.5 block text-[11px] font-medium uppercase tracking-wider text-zinc-500;
+  }
+}
+
+/* scrollbars */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #3f3f46 transparent;
+}
+
+/* Itens de grid/flex não devem expandir além da trilha (evita scroll horizontal no mobile). */
+.grid > *,
+main > * {
+  min-width: 0;
+}
