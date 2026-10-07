@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 
-export const STORAGE_PREFIX = 'b2c-hq:'
+// Novo namespace após o reposicionamento para identidade visual + sites (os dados antigos ficam em `b2c-hq:`).
+export const STORAGE_PREFIX = 'ms-hq:'
 
 function read(key, fallback) {
   try {
@@ -11,7 +12,7 @@ function read(key, fallback) {
   }
 }
 
-/** useState persistido no localStorage (namespace `b2c-hq:`). */
+/** useState persistido no localStorage (namespace `ms-hq:`). */
 export function useLocalStorage(key, initialValue) {
   const [value, setValue] = useState(() =>
     read(key, typeof initialValue === 'function' ? initialValue() : initialValue),

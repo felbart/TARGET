@@ -27,7 +27,7 @@ export default function App() {
     const blob = new Blob([JSON.stringify(exportAll(), null, 2)], { type: 'application/json' })
     const a = document.createElement('a')
     a.href = URL.createObjectURL(blob)
-    a.download = `brand-to-code-hq-${new Date().toISOString().slice(0, 10)}.json`
+    a.download = `marca-site-hq-${new Date().toISOString().slice(0, 10)}.json`
     a.click()
     URL.revokeObjectURL(a.href)
   }
@@ -59,11 +59,11 @@ export default function App() {
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
           <div className="flex min-w-0 items-center gap-3">
             <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-emerald-500/30 bg-gradient-to-br from-emerald-500/20 to-cyan-500/10 font-mono text-xs font-bold text-emerald-300">
-              {'</>'}
+              M+S
             </div>
             <div className="min-w-0">
-              <div className="truncate text-sm font-semibold tracking-tight text-zinc-50">Brand-to-Code HQ</div>
-              <div className="truncate text-[11px] text-zinc-500">Marca pessoal · Ofertas · Sprint 90 dias</div>
+              <div className="truncate text-sm font-semibold tracking-tight text-zinc-50">Marca & Site HQ</div>
+              <div className="truncate text-[11px] text-zinc-500">Identidade visual · Sites · Sprint 90 dias</div>
             </div>
           </div>
           <div className="flex items-center gap-1">

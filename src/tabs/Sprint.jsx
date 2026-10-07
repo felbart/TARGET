@@ -209,7 +209,7 @@ export default function Sprint() {
             <Input type="date" value={form.date} onChange={(e) => setForm({ ...form, date: e.target.value })} required />
           </Field>
           <Field label="Título / Tema" className="md:col-span-3">
-            <Input value={form.title} onChange={(e) => setForm({ ...form, title: e.target.value })} placeholder="Tokens semânticos no Tailwind" required />
+            <Input value={form.title} onChange={(e) => setForm({ ...form, title: e.target.value })} placeholder="Redesign da marca de uma clínica" required />
           </Field>
           <Field label="Fórmula" className="md:col-span-3">
             <Select

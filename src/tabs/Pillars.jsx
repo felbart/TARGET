@@ -38,9 +38,9 @@ function Bullseye({ levels, active, onSelect }) {
           )}
           {i === 0 && (
             <span className="flex h-full w-full items-center justify-center p-2 text-center font-mono text-[10px] font-semibold uppercase leading-tight text-emerald-100">
-              Brand
+              Marca
               <br />
-              to Code
+              + Site
             </span>
           )}
         </button>
@@ -139,10 +139,10 @@ export default function Pillars() {
 
           <div className="grid gap-3 rounded-xl border border-dashed border-zinc-700 p-4 md:grid-cols-[1fr_1fr_auto] md:items-end">
             <Field label="Nova crença do mercado">
-              <Input value={newBelief.market} onChange={(e) => setNewBelief({ ...newBelief, market: e.target.value })} placeholder="“Handoff é responsabilidade do dev.”" />
+              <Input value={newBelief.market} onChange={(e) => setNewBelief({ ...newBelief, market: e.target.value })} placeholder="“Marca boa é marca cara.”" />
             </Field>
             <Field label="Sua tese contrária">
-              <Input value={newBelief.thesis} onChange={(e) => setNewBelief({ ...newBelief, thesis: e.target.value })} placeholder="“Handoff bom é aquele que não existe.”" onKeyDown={(e) => e.key === 'Enter' && addBelief()} />
+              <Input value={newBelief.thesis} onChange={(e) => setNewBelief({ ...newBelief, thesis: e.target.value })} placeholder="“Marca cara é a que não vende.”" onKeyDown={(e) => e.key === 'Enter' && addBelief()} />
             </Field>
             <Button variant="primary" onClick={addBelief}><IconPlus className="h-4 w-4" />Adicionar</Button>
           </div>
@@ -184,20 +184,21 @@ export default function Pillars() {
               <span className="h-2 w-2 rounded-full bg-rose-400/60" />
               <span className="h-2 w-2 rounded-full bg-amber-400/60" />
               <span className="h-2 w-2 rounded-full bg-emerald-400/60" />
-              <span className="ml-2 font-mono text-[10px] text-zinc-500">setup.frame</span>
+              <span className="ml-2 font-mono text-[10px] text-zinc-500">antes-depois.frame</span>
             </div>
             <div className="grid h-24 grid-cols-2">
-              <div className="flex flex-col items-center justify-center gap-1 border-r border-zinc-800 bg-zinc-950">
-                <span className="grid grid-cols-2 gap-1">
-                  <span className="h-3 w-3 rounded-sm bg-rose-400/70" /><span className="h-3 w-3 rounded-full bg-violet-400/70" />
-                  <span className="h-3 w-3 rounded-full bg-emerald-400/70" /><span className="h-3 w-3 rounded-sm bg-cyan-400/70" />
-                </span>
-                <span className="font-mono text-[10px] text-zinc-500">Figma</span>
+              <div className="flex flex-col items-center justify-center gap-1.5 border-r border-zinc-800 bg-zinc-950">
+                <span className="flex h-8 w-8 items-center justify-center rounded bg-zinc-700 font-serif text-xs text-zinc-400">Aa</span>
+                <span className="font-mono text-[10px] uppercase text-zinc-500">Antes</span>
               </div>
-              <div className="flex flex-col justify-center gap-1 bg-zinc-950 px-4 font-mono text-[10px]">
-                <span className="text-cyan-300/80">{'<Button'}</span>
-                <span className="pl-3 text-emerald-300/80">variant=&quot;primary&quot;</span>
-                <span className="text-cyan-300/80">{'/>'} <span className="text-zinc-600">// HMR ⚡</span></span>
+              <div className="flex flex-col items-center justify-center gap-1.5 bg-zinc-950">
+                <span className="flex items-center gap-1">
+                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-emerald-400 to-cyan-400 text-xs font-bold text-zinc-950">M</span>
+                  <span className="h-8 w-2 rounded-sm bg-emerald-400/70" />
+                  <span className="h-8 w-2 rounded-sm bg-cyan-400/70" />
+                  <span className="h-8 w-2 rounded-sm bg-zinc-200/80" />
+                </span>
+                <span className="font-mono text-[10px] uppercase text-emerald-400">Depois</span>
               </div>
             </div>
           </div>

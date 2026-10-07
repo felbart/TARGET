@@ -11,12 +11,12 @@ const fmtMoney = (n, currency) =>
 const fmtInt = (n) => new Intl.NumberFormat('pt-BR', { maximumFractionDigits: 1 }).format(n)
 
 const CTA_TEMPLATES = [
-  (k) => `Comente ${k} para receber o template do Design Token.`,
-  () => 'Link na bio para auditar o Design System do seu app.',
-  (k) => `Comente ${k} que eu te mando o checklist de handoff Figma → Next.js.`,
-  () => 'Quer esse setup no seu produto? Diagnóstico gratuito no link da bio.',
-  (k) => `Digite ${k} e receba o repositório base com Tailwind + Radix configurados.`,
-  () => 'Salva esse vídeo e manda pro dev do seu time.',
+  (k) => `Comente ${k} para receber o checklist de identidade visual.`,
+  () => 'Link na bio para uma análise gratuita da marca e do site do seu negócio.',
+  (k) => `Comente ${k} que eu te mando os 7 erros que fazem um site perder clientes.`,
+  () => 'Quer uma marca assim no seu negócio? Diagnóstico gratuito no link da bio.',
+  (k) => `Digite ${k} e receba o guia de cores por segmento de negócio.`,
+  () => 'Salva esse vídeo e manda pra quem tem um negócio.',
 ]
 
 export default function Offers() {

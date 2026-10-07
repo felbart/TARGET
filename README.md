@@ -1,8 +1,8 @@
-# Brand-to-Code HQ
+# Marca & Site HQ
 
-Painel SPA (React + Tailwind, dark mode) de **Gestão de Marca Pessoal e Ofertas** que une o framework de 90 dias do Kallaway à disciplina de Design Engineering (Figma → Next.js).
+Painel SPA (React + Tailwind, dark mode) de **Gestão de Marca Pessoal e Ofertas** para quem vende **identidade visual e sites** para negócios, organizado pelo framework de 90 dias do Kallaway.
 
-Todos os dados ficam no `localStorage` (prefixo `b2c-hq:`). Não há backend. O cabeçalho tem **Exportar / Importar** (backup em JSON) e **Resetar**.
+Todos os dados ficam no `localStorage` (prefixo `ms-hq:`). Não há backend. O cabeçalho tem **Exportar / Importar** (backup em JSON) e **Resetar**.
 
 ## Abas
 

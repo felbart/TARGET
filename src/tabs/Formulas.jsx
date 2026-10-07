@@ -3,7 +3,7 @@ import { useLocalStorage, uid } from '../hooks/useLocalStorage'
 import { formulaOptions, formulasDefaults } from '../data/defaults'
 import {
   Card, Field, Input, Select, Textarea, Button, Badge, Switch, EmptyState,
-  IconFlask, IconShuffle, IconPlus, IconTrash, IconCode,
+  IconFlask, IconShuffle, IconPlus, IconTrash, IconSpark,
 } from '../components/ui'
 
 export const STATUS = {
@@ -115,7 +115,7 @@ export default function Formulas() {
       {/* 1. Gerador */}
       <Card
         title="Gerador de Fórmulas"
-        icon={<IconCode />}
+        icon={<IconSpark />}
         subtitle="Fórmula = Tópico + Formato + Layout Visual. Combine, teste e escale só o que vencer."
         actions={<Button size="sm" onClick={shuffle}><IconShuffle className="h-3.5 w-3.5" />Aleatória</Button>}
       >

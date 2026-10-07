@@ -14,7 +14,7 @@ export function Card({ title, subtitle, icon, actions, className = '', children 
             </h3>
             {subtitle && <p className="mt-1 text-xs leading-relaxed text-zinc-500">{subtitle}</p>}
           </div>
-          {actions && <div className="flex shrink-0 items-center gap-2">{actions}</div>}
+          {actions && <div className="flex max-w-full flex-wrap items-center gap-2">{actions}</div>}
         </header>
       )}
       {children}

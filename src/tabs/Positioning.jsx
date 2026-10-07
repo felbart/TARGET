@@ -9,13 +9,13 @@ const MODES = [
   {
     id: 'mass',
     title: 'Mass Awareness',
-    desc: 'Alcance amplo, temas genéricos, público frio. Bom para crescer números — ruim para fechar contratos B2B.',
+    desc: 'Alcance amplo, temas genéricos, público frio. Bom para crescer números — ruim para fechar projetos de ticket alto.',
     stats: ['Alcance ↑↑', 'Conversão ↓', 'Viewer drift alto'],
   },
   {
     id: 'targeted',
     title: 'Targeted Category Authority',
-    desc: 'Autoridade de nicho: menos views, mas cada view é de quem decide e contrata. O modo certo para Design Engineering.',
+    desc: 'Autoridade de nicho: menos views, mas cada view é de quem decide e contrata. O modo certo para vender identidade visual e sites.',
     stats: ['Alcance ~', 'Conversão ↑↑', 'Ticket alto'],
     recommended: true,
   },
@@ -79,7 +79,7 @@ export default function Positioning() {
                     </span>
                     {m.title}
                   </span>
-                  {m.recommended && <Badge tone="emerald">Recomendado p/ Design Eng.</Badge>}
+                  {m.recommended && <Badge tone="emerald">Recomendado p/ marca + site</Badge>}
                 </div>
                 <p className="mt-2 text-xs leading-relaxed text-zinc-400">{m.desc}</p>
                 <div className="mt-3 flex flex-wrap gap-1.5">
@@ -96,8 +96,8 @@ export default function Positioning() {
         {state.mode === 'mass' && (
           <div className="mt-4 flex items-start gap-2 rounded-lg border border-amber-500/30 bg-amber-500/[0.07] p-3 text-xs text-amber-200">
             <IconAlert className="mt-0.5 h-4 w-4 shrink-0" />
-            Para serviços de Design Engineering (ticket alto, B2B), Mass Awareness tende a atrair audiência que não
-            contrata. Use apenas como experimento pontual.
+            Para serviços de identidade visual e sites, Mass Awareness tende a atrair outros designers e curiosos, que
+            não contratam. Use apenas como experimento pontual.
           </div>
         )}
       </Card>
@@ -111,13 +111,13 @@ export default function Positioning() {
         <div className="grid gap-4 lg:grid-cols-[1fr_1.1fr]">
           <div className="grid gap-4">
             <Field label="Avatar (quem)">
-              <Input value={state.avatar} onChange={(e) => set('avatar', e.target.value)} placeholder="Fundadores técnicos e times de produto" />
+              <Input value={state.avatar} onChange={(e) => set('avatar', e.target.value)} placeholder="Donos de pequenos negócios e profissionais liberais" />
             </Field>
             <Field label="Problema (dor)">
-              <Textarea value={state.problem} onChange={(e) => set('problem', e.target.value)} placeholder="Eliminar a perda de fidelidade entre Figma e produção" />
+              <Textarea value={state.problem} onChange={(e) => set('problem', e.target.value)} placeholder="Transmitir confiança e atrair mais clientes" />
             </Field>
             <Field label="Solução (mecanismo)">
-              <Textarea value={state.solution} onChange={(e) => set('solution', e.target.value)} placeholder="Arquitetura de Design Systems e componentes em Next.js/Tailwind" />
+              <Textarea value={state.solution} onChange={(e) => set('solution', e.target.value)} placeholder="Uma identidade visual estratégica e um site que gera contatos" />
             </Field>
           </div>
 
@@ -151,15 +151,15 @@ export default function Positioning() {
               <Input
                 value={state.gateTopic}
                 onChange={(e) => set('gateTopic', e.target.value)}
-                placeholder="Ex: Como sincronizar variáveis do Figma com o tailwind.config"
+                placeholder="Ex: 3 sinais de que sua marca está afastando clientes"
                 onKeyDown={(e) => e.key === 'Enter' && logTopic()}
               />
             </Field>
             <Checkbox checked={state.gateDecider} onChange={(v) => set('gateDecider', v)}>
-              Esse tema interessa diretamente a quem <strong className="text-zinc-100">contrata ou toma decisões de produto</strong>?
+              Esse tema interessa diretamente a quem <strong className="text-zinc-100">contrata: donos de negócio e decisores</strong>?
             </Checkbox>
             <Checkbox checked={state.gateAuthority} onChange={(v) => set('gateAuthority', v)}>
-              Ele demonstra <strong className="text-zinc-100">autoridade técnica real</strong> (código/arquitetura) ou é só dica genérica de Figma?
+              Ele demonstra <strong className="text-zinc-100">autoridade real</strong> (estratégia, processo, resultado) ou é só inspiração estética e dica genérica de design?
             </Checkbox>
 
             {gateTouched &&
