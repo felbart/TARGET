@@ -139,10 +139,10 @@ export default function Pillars() {
 
           <div className="grid gap-3 rounded-xl border border-dashed border-zinc-700 p-4 md:grid-cols-[1fr_1fr_auto] md:items-end">
             <Field label="Nova crença do mercado">
-              <Input value={newBelief.market} onChange={(e) => setNewBelief({ ...newBelief, market: e.target.value })} placeholder="“Designer precisa ser especialista em uma coisa só.”" />
+              <Input value={newBelief.market} onChange={(e) => setNewBelief({ ...newBelief, market: e.target.value })} placeholder="“Marca boa é marca cara.”" />
             </Field>
             <Field label="Sua tese contrária">
-              <Input value={newBelief.thesis} onChange={(e) => setNewBelief({ ...newBelief, thesis: e.target.value })} placeholder="“A interseção é o que torna a entrega um resultado.”" onKeyDown={(e) => e.key === 'Enter' && addBelief()} />
+              <Input value={newBelief.thesis} onChange={(e) => setNewBelief({ ...newBelief, thesis: e.target.value })} placeholder="“Marca cara é a que não vende.”" onKeyDown={(e) => e.key === 'Enter' && addBelief()} />
             </Field>
             <Button variant="primary" onClick={addBelief}><IconPlus className="h-4 w-4" />Adicionar</Button>
           </div>

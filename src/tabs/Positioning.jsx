@@ -111,13 +111,13 @@ export default function Positioning() {
         <div className="grid gap-4 lg:grid-cols-[1fr_1.1fr]">
           <div className="grid gap-4">
             <Field label="Avatar (quem)">
-              <Input value={state.avatar} onChange={(e) => set('avatar', e.target.value)} placeholder="Profissionais liberais e empresas médias sem time de design" />
+              <Input value={state.avatar} onChange={(e) => set('avatar', e.target.value)} placeholder="Donos de pequenos negócios e profissionais liberais" />
             </Field>
             <Field label="Problema (dor)">
-              <Textarea value={state.problem} onChange={(e) => set('problem', e.target.value)} placeholder="Parecer o tamanho que já têm" />
+              <Textarea value={state.problem} onChange={(e) => set('problem', e.target.value)} placeholder="Transmitir confiança e atrair mais clientes" />
             </Field>
             <Field label="Solução (mecanismo)">
-              <Textarea value={state.solution} onChange={(e) => set('solution', e.target.value)} placeholder="Identidade visual e site como uma decisão só" />
+              <Textarea value={state.solution} onChange={(e) => set('solution', e.target.value)} placeholder="Uma identidade visual estratégica e um site que gera contatos" />
             </Field>
           </div>
 
@@ -151,7 +151,7 @@ export default function Positioning() {
               <Input
                 value={state.gateTopic}
                 onChange={(e) => set('gateTopic', e.target.value)}
-                placeholder="Ex: O site que carrega, é bonito e não decide nada"
+                placeholder="Ex: 3 sinais de que sua marca está afastando clientes"
                 onKeyDown={(e) => e.key === 'Enter' && logTopic()}
               />
             </Field>
@@ -159,7 +159,7 @@ export default function Positioning() {
               Esse tema interessa diretamente a quem <strong className="text-zinc-100">contrata: donos de negócio e decisores</strong>?
             </Checkbox>
             <Checkbox checked={state.gateAuthority} onChange={(v) => set('gateAuthority', v)}>
-              Ele mostra <strong className="text-zinc-100">raciocínio aplicado</strong> (critério, decisão, caso próprio) ou é só estética e dica genérica?
+              Ele demonstra <strong className="text-zinc-100">autoridade real</strong> (estratégia, processo, resultado) ou é só inspiração estética e dica genérica de design?
             </Checkbox>
 
             {gateTouched &&
