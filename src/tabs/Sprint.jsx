@@ -209,7 +209,7 @@ export default function Sprint() {
             <Input type="date" value={form.date} onChange={(e) => setForm({ ...form, date: e.target.value })} required />
           </Field>
           <Field label="Título / Tema" className="md:col-span-3">
-            <Input value={form.title} onChange={(e) => setForm({ ...form, title: e.target.value })} placeholder="Redesign da marca de uma clínica" required />
+            <Input value={form.title} onChange={(e) => setForm({ ...form, title: e.target.value })} placeholder="Caso SLU: o protótipo que ninguém codou" required />
           </Field>
           <Field label="Fórmula" className="md:col-span-3">
             <Select

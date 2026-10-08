@@ -11,12 +11,12 @@ const fmtMoney = (n, currency) =>
 const fmtInt = (n) => new Intl.NumberFormat('pt-BR', { maximumFractionDigits: 1 }).format(n)
 
 const CTA_TEMPLATES = [
-  (k) => `Comente ${k} para receber o checklist de identidade visual.`,
-  () => 'Link na bio para uma análise gratuita da marca e do site do seu negócio.',
-  (k) => `Comente ${k} que eu te mando os 7 erros que fazem um site perder clientes.`,
-  () => 'Quer uma marca assim no seu negócio? Diagnóstico gratuito no link da bio.',
-  (k) => `Digite ${k} e receba o guia de cores por segmento de negócio.`,
-  () => 'Salva esse vídeo e manda pra quem tem um negócio.',
+  (k) => `Comente ${k} e eu te mando como funciona o processo Marca + Site.`,
+  () => 'O processo completo, da marca até o código, está no link da bio.',
+  (k) => `Comente ${k} para receber o checklist: o seu site decide alguma coisa?`,
+  () => 'Seu site existe, carrega e não decide nada? O Resgate está no link da bio.',
+  (k) => `Comente ${k} que eu te mando as perguntas que faço antes de desenhar qualquer marca.`,
+  () => 'Salva pra quando for contratar marca e site, e manda pra quem cresceu por indicação.',
 ]
 
 export default function Offers() {
@@ -24,6 +24,8 @@ export default function Offers() {
   const set = patch(setState)
   const [newDel, setNewDel] = useState('')
   const [customCta, setCustomCta] = useState('')
+  const [newSat, setNewSat] = useState('')
+  const satellites = state.satellites ?? []
 
   const updateDel = (id, field, val) =>
     set('deliverables', state.deliverables.map((d) => (d.id === id ? { ...d, [field]: val } : d)))
@@ -32,6 +34,15 @@ export default function Offers() {
     if (!newDel.trim()) return
     set('deliverables', [...state.deliverables, { id: uid(), title: newDel.trim(), detail: '' }])
     setNewDel('')
+  }
+
+  const updateSat = (id, field, val) =>
+    set('satellites', satellites.map((o) => (o.id === id ? { ...o, [field]: val } : o)))
+
+  const addSat = () => {
+    if (!newSat.trim()) return
+    set('satellites', [...satellites, { id: uid(), title: newSat.trim(), detail: '' }])
+    setNewSat('')
   }
 
   const addCta = (text) => {
@@ -91,6 +102,27 @@ export default function Offers() {
                 <Button onClick={addDel}><IconPlus className="h-4 w-4" /></Button>
               </div>
             </div>
+
+            <div>
+              <div className="label">Ofertas satélite</div>
+              <ul className="grid gap-2">
+                {satellites.map((o) => (
+                  <li key={o.id} className="flex gap-3 rounded-xl border border-zinc-800 bg-zinc-950/40 p-3">
+                    <div className="grid flex-1 gap-1.5">
+                      <Input value={o.title} onChange={(e) => updateSat(o.id, 'title', e.target.value)} className="font-medium" />
+                      <Input value={o.detail} onChange={(e) => updateSat(o.id, 'detail', e.target.value)} placeholder="Para quem é (opcional)" className="text-xs text-zinc-400" />
+                    </div>
+                    <Button variant="danger" size="icon" aria-label="Remover" onClick={() => set('satellites', satellites.filter((x) => x.id !== o.id))}>
+                      <IconTrash className="h-3.5 w-3.5" />
+                    </Button>
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-2 flex gap-2">
+                <Input value={newSat} onChange={(e) => setNewSat(e.target.value)} placeholder="Nova oferta satélite…" onKeyDown={(e) => e.key === 'Enter' && addSat()} />
+                <Button onClick={addSat}><IconPlus className="h-4 w-4" /></Button>
+              </div>
+            </div>
           </div>
 
           <div className="grid content-start gap-4">
@@ -98,7 +130,7 @@ export default function Offers() {
               <div className="label">Modelo de cobrança</div>
               <div className="grid grid-cols-2 gap-1 rounded-lg bg-zinc-900 p-1">
                 {[
-                  ['fixed', 'Fixo por projeto'],
+                  ['fixed', 'Por projeto'],
                   ['weekly', 'Sprint semanal'],
                 ].map(([id, label]) => (
                   <button
@@ -118,7 +150,7 @@ export default function Offers() {
                   <Select value={state.currency} onChange={(e) => set('currency', e.target.value)} options={['BRL', 'USD', 'EUR']} />
                 </Field>
                 {state.pricingModel === 'fixed' ? (
-                  <Field label="Preço do projeto">
+                  <Field label="Ticket médio do projeto" hint="O preço final é caso a caso; este valor alimenta a calculadora.">
                     <Input type="number" min="0" step="500" value={state.price} onChange={(e) => set('price', Number(e.target.value))} />
                   </Field>
                 ) : (
@@ -147,12 +179,15 @@ export default function Offers() {
                   </li>
                 ))}
               </ul>
+              {satellites.length > 0 && (
+                <p className="mt-3 text-[11px] text-zinc-500">Também: {satellites.map((o) => o.title).join(' · ')}</p>
+              )}
               <div className="mt-5 flex items-end justify-between border-t border-zinc-800 pt-4">
                 <div>
                   <div className="font-mono text-2xl font-semibold text-zinc-50">{fmtMoney(ticket, state.currency)}</div>
                   <div className="text-[11px] text-zinc-500">
                     {state.pricingModel === 'fixed'
-                      ? 'valor fixo por projeto'
+                      ? 'ticket médio · orçamento caso a caso'
                       : `${fmtMoney(state.weeklyPrice, state.currency)}/semana × ${state.sprintWeeks}`}
                   </div>
                 </div>
@@ -163,7 +198,7 @@ export default function Offers() {
       </Card>
 
       {/* 2. CTAs */}
-      <Card title="Lead Magnet & CTAs" icon={<IconLink />} subtitle="Feche cada vídeo com um próximo passo único que leva para a oferta.">
+      <Card title="Lead Magnet & CTAs" icon={<IconLink />} subtitle="Feche cada peça com um próximo passo único. Regra: CTA de venda aponta para a página de método, não para o WhatsApp.">
         <div className="grid gap-6 lg:grid-cols-2">
           <div className="grid content-start gap-4">
             <Field label="Palavra-chave do lead magnet" hint="Usada nos templates com [PALAVRA-CHAVE].">

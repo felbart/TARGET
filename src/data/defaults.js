@@ -2,9 +2,9 @@
 
 export const positioningDefaults = {
   mode: 'targeted',
-  avatar: 'Donos de pequenos negócios e profissionais liberais',
-  problem: 'Transmitir confiança e atrair mais clientes, em vez de parecer amador na internet',
-  solution: 'Uma identidade visual estratégica e um site profissional pensado para gerar contatos',
+  avatar: 'Profissionais liberais e empresas médias sem time de design',
+  problem: 'Parecer o tamanho que já têm, sem marca que morre no PDF nem site genérico que não decide nada',
+  solution: 'Identidade visual e site entregues como uma decisão só, da marca até o código',
   gateTopic: '',
   gateDecider: false,
   gateAuthority: false,
@@ -13,99 +13,113 @@ export const positioningDefaults = {
 
 export const pillarsDefaults = {
   bullseye: [
-    'Identidade Visual + Site para negócios de serviço (marca que vende)',
-    'Branding estratégico & Landing pages de conversão',
-    'Design gráfico & Social media',
-    'Peças avulsas e design genérico (flyer, cartão, banner)',
+    'Marca + Site como uma decisão só (da marca até o código)',
+    'Critério antes de execução: decisão de design, IA com critério',
+    'Carreira, processo e ferramentas para designers',
+    'Design genérico: tendência, estética pela estética, peça avulsa',
   ],
   beliefs: [
     {
       id: 'b1',
-      market: 'Identidade visual é ter um logo bonito.',
-      thesis: 'Logo é 10% da marca. Identidade é o sistema que faz o cliente reconhecer e confiar em você em todo ponto de contato.',
+      market: 'Design bom é design bonito.',
+      thesis: 'Design vale pelo que decide, não pelo que entrega. Raciocínio, não só estética.',
     },
     {
       id: 'b2',
-      market: 'Site é só um cartão de visitas online.',
-      thesis: 'Site que não gera contato é custo. Site bom é um vendedor 24h com objetivo claro e CTA.',
+      market: 'Marca e site são dois projetos.',
+      thesis: 'Identidade visual e site são uma decisão só. Marca que não chega no código morre no PDF.',
     },
     {
       id: 'b3',
-      market: 'Qualquer um faz uma marca no Canva.',
-      thesis: 'Canva entrega aparência. Estratégia entrega preço premium.',
+      market: 'A IA vai acabar com o design.',
+      thesis: 'A IA barateou a execução e encareceu o erro. Decisão sem critério se propaga, e quanto mais longe vai, mais cara fica a volta.',
+    },
+    {
+      id: 'b4',
+      market: 'Um site bonito, com seções bem feitas, resolve.',
+      thesis: 'Site que não sabe pra quem fala nem sustenta a marca é template, por mais bonito que seja.',
     },
   ],
-  keywords: ['Marca que Vende', 'Identidade Estratégica', 'Site que Converte'],
+  keywords: ['Brand to Code', 'Design com raciocínio', 'Da marca ao código', 'Critério antes de execução'],
   setup: [
-    { id: 's1', label: 'Tela dividida Antes | Depois da marca/site do cliente', done: true },
-    { id: 's2', label: 'Roupas neutras (sem estampas, paleta escura)', done: true },
-    { id: 's3', label: 'Iluminação de contraste alto (key light lateral + fundo escuro)', done: false },
+    { id: 's1', label: 'Você na frente, com ponto de vista (não cabeça falante recitando informação)', done: false },
+    { id: 's2', label: 'Antes | Depois: a marca aplicada até o site funcionando', done: false },
+    { id: 's3', label: 'Sem lifestyle nem vitrine de criativo: credibilidade, não vitrine', done: false },
+    { id: 's4', label: 'Toda tese com um caso próprio por perto', done: false },
   ],
   matrix: [
     {
       dim: 'Tópico',
-      common: 'Logos bonitos e mockups soltos no portfólio',
-      mine: 'Marca como ferramenta de vendas: identidade + site que gera contato',
+      common: 'Tendências, inspiração e dicas soltas de ferramenta',
+      mine: 'Da marca ao código: identidade que só se prova quando vira site funcionando',
     },
     {
       dim: 'Profundidade',
-      common: 'Estética pela estética, sem estratégia',
-      mine: 'Diagnóstico de posicionamento, público e concorrência antes do primeiro traço',
+      common: 'Estética pela estética; o "como fazer" sem o "por quê"',
+      mine: 'Critério antes de execução: o que separa escolha justificável de escolha bonita',
     },
     {
       dim: 'Avatar',
-      common: 'Outros designers e estudantes (curtem, mas não contratam)',
-      mine: 'Donos de negócio e profissionais liberais que precisam vender mais',
+      common: 'Designer falando para designers (curtem, mas não contratam)',
+      mine: 'Profissionais liberais e empresas médias que cresceram por indicação; designers indicam',
     },
     {
       dim: 'Formato',
-      common: 'Portfólio estático e carrossel de inspiração',
-      mine: 'Antes x Depois de marcas reais, análise de sites de negócios, processo em 60s',
+      common: 'Portfólio de vitrine e talking head recitando informação',
+      mine: 'Cases contados como história (problema, leitura, decisões) e opinião com ponto de vista',
     },
     {
       dim: 'Visual',
-      common: 'Mockups genéricos de papelaria',
-      mine: 'Marca aplicada no mundo real: fachada, Instagram, site no celular',
+      common: 'Lifestyle de criativo e mockups genéricos',
+      mine: 'Antes | Depois com a marca aplicada até o site no ar; você na frente, sem performance',
     },
   ],
 }
 
 export const offerDefaults = {
-  name: 'Marca & Site em 21 dias: identidade visual + site profissional',
-  promise: 'Do posicionamento ao site no ar: uma marca que transmite confiança e um site pensado para gerar contatos.',
+  name: 'Marca + Site: identidade visual e site como uma decisão só',
+  promise: 'Crio marcas que chegam até o código: marca, interface e site entregues como sistema, não como arquivos soltos que alguém ainda precisa transformar em algo funcional.',
   deliverables: [
-    { id: 'd1', title: 'Diagnóstico de marca & posicionamento', detail: 'Público, concorrência, tom de voz e conceito visual.' },
-    { id: 'd2', title: 'Identidade visual completa', detail: 'Logo e variações, paleta, tipografia, elementos gráficos e aplicações.' },
-    { id: 'd3', title: 'Manual de marca + templates para redes sociais', detail: 'Regras de uso e modelos editáveis para o dia a dia.' },
-    { id: 'd4', title: 'Site profissional responsivo', detail: 'Até 5 páginas, pensado para celular, SEO básico e botão de WhatsApp.' },
+    { id: 'd1', title: 'Diagnóstico', detail: 'Para quem a marca fala, o que precisa decidir e o que motivou o projeto.' },
+    { id: 'd2', title: 'Território de marca', detail: 'Conceito, posicionamento e tom antes do primeiro traço.' },
+    { id: 'd3', title: 'Identidade visual', detail: 'Logo, cores, tipografia e elementos, já pensados para o digital.' },
+    { id: 'd4', title: 'Estrutura do site', detail: 'Páginas, conteúdo e o caminho até o contato.' },
+    { id: 'd5', title: 'Interface', detail: 'Layout responsivo aplicando a identidade.' },
+    { id: 'd6', title: 'Código e publicação', detail: 'Site no ar, com hospedagem configurada.' },
+    { id: 'd7', title: 'Entrega com manual de uso', detail: 'Regras de marca e como manter o site.' },
+  ],
+  satellites: [
+    { id: 'o1', title: 'Só marca', detail: 'Identidade visual com kit de aplicação digital, pronta para virar site depois.' },
+    { id: 'o2', title: 'Só site', detail: 'Para quem já tem marca; inclui auditoria de coerência da marca existente.' },
+    { id: 'o3', title: 'Resgate', detail: 'Redesign do site que existe e não decide nada.' },
   ],
   pricingModel: 'fixed',
-  price: 7500,
+  price: 8500,
   weeklyPrice: 2500,
   sprintWeeks: 3,
   currency: 'BRL',
-  ctaKeyword: 'MARCA',
+  ctaKeyword: 'MÉTODO',
   ctas: [
-    { id: 'c1', text: 'Comente MARCA para receber o checklist de identidade visual.' },
-    { id: 'c2', text: 'Link na bio para uma análise gratuita da marca e do site do seu negócio.' },
+    { id: 'c1', text: 'Comente MÉTODO e eu te mando como funciona o processo Marca + Site.' },
+    { id: 'c2', text: 'O processo completo, da marca até o código, está no link da bio.' },
   ],
-  funnel: { views: 100000, ctr: 1.5, bookingRate: 10, closeRate: 30 },
+  funnel: { views: 30000, ctr: 1, bookingRate: 5, closeRate: 30 },
 }
 
 export const formulaOptions = {
-  topics: ['Redesign de marca', 'Erros de site que espantam clientes', 'Psicologia das cores por segmento', 'Logo vs. identidade visual', 'Site de negócio local'],
-  formats: ['Antes x Depois', 'Processo em 60s', 'Análise de marca/site real', 'Mito vs. Verdade'],
-  layouts: ['Tela dividida (Antes | Depois)', 'Screencast com Facecam', 'Marca aplicada em mockup real'],
+  topics: ['Da marca ao código', 'Critério antes de execução', 'IA e o custo da decisão errada', 'Carreira e reinvenção', 'Bastidores (caso real)'],
+  formats: ['Case como narrativa (problema → leitura → decisões)', 'Antes x Depois', 'Crítica com ponto de vista', 'Processo & ferramentas'],
+  layouts: ['Você na frente, com ponto de vista', 'Tela dividida (Antes | Depois)', 'Carrossel', 'Screencast com facecam'],
 }
 
 export const formulasDefaults = [
   {
     id: 'f1',
-    topic: 'Redesign de marca',
-    format: 'Antes x Depois',
-    layout: 'Tela dividida (Antes | Depois)',
+    topic: 'Bastidores (caso real)',
+    format: 'Case como narrativa (problema → leitura → decisões)',
+    layout: 'Você na frente, com ponto de vista',
     tests: { performance: false, leads: false, sustainability: false, aesthetics: false },
-    notes: '',
+    notes: 'Primeira peça: o caso SLU (o protótipo que ficou parado no Figma até ser codado com Keycloak).',
     status: 'testing',
   },
 ]
