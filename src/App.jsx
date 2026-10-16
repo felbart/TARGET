@@ -1,4 +1,5 @@
 import { useRef } from 'react'
+import { useAuth } from './auth/AuthGate'
 import { useLocalStorage, exportAll, importAll, clearAll } from './hooks/useLocalStorage'
 import Positioning from './tabs/Positioning'
 import Pillars from './tabs/Pillars'
@@ -18,6 +19,7 @@ const TABS = [
 ]
 
 export default function App() {
+  const auth = useAuth()
   const [tab, setTab] = useLocalStorage('activeTab', 'positioning')
   const fileRef = useRef(null)
   const current = TABS.find((t) => t.id === tab) ?? TABS[0]
@@ -67,6 +69,7 @@ export default function App() {
             </div>
           </div>
           <div className="flex items-center gap-1">
+            <Button variant="ghost" size="sm" onClick={auth?.logout} disabled={auth?.busy}>Sair</Button>
             <Button variant="ghost" size="sm" onClick={handleExport} title="Exportar backup JSON">
               <IconDownload className="h-3.5 w-3.5" /><span className="hidden sm:inline">Exportar</span>
             </Button>

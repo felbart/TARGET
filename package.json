@@ -3,17 +3,25 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
   "description": "Painel de Gestão de Marca Pessoal e Ofertas — Kallaway 90 dias + Design Engineering (Brand-to-Code).",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "node --test tests/*.test.mjs",
+    "test:security:remote": "node scripts/remote-security.mjs",
+    "check:security:env": "node scripts/check-security-env.mjs"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.117.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
+    "@electric-sql/pglite": "^0.5.10",
     "@vitejs/plugin-react": "^4.3.4",
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.49",

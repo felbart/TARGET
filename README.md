@@ -2,7 +2,18 @@
 
 Painel SPA (React + Tailwind, dark mode) de **Gestão de Marca Pessoal e Ofertas** para quem vende **identidade visual e sites** para negócios, organizado pelo framework de 90 dias do Kallaway.
 
-Todos os dados ficam no `localStorage` (prefixo `ms-hq:`). Não há backend. O cabeçalho tem **Exportar / Importar** (backup em JSON) e **Resetar**.
+Os dados editoriais ficam no `localStorage` (prefixo `ms-hq:`). Supabase Auth controla o acesso por Magic Link, com sessão separada dos documentos. O cabeçalho tem **Exportar / Importar** (backup em JSON), **Resetar** e **Sair**.
+
+## Supabase Auth e persistência editorial local
+
+As duas migrations com 10 tabelas híbridas e RLS foram aplicadas no projeto Target FB.
+A RPC `record_evaluation` grava avaliação e mudança explícita do status da fórmula na mesma transação.
+A persistência editorial continua usando apenas localStorage; não há migração ou sincronização automática.
+Veja [Magic Link, configuração e testes reais de segurança](docs/auth-and-security.md).
+O gate de sessão cobre restauração, renovação/expiração e logout; tokens ficam separados dos dados editoriais.
+Veja [modelo, inventário, conexão e estratégia de migração](docs/supabase-preparation.md).
+As variáveis públicas necessárias estão em [`.env.example`](.env.example).
+Validação local: `npm test` (inclui PostgreSQL embarcado) e `npm run build`.
 
 ## Abas
 
